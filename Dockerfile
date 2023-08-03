@@ -6,6 +6,7 @@ ENV GOMAXPROCS=10
 COPY . .
 RUN chown -R jac:jac .
 USER jac
-RUN go build
-RUN go test ./...
+ENV GOPATH=/workspaces/${PROJECT}
+#RUN go build
+#RUN go test ./...
 
