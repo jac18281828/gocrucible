@@ -10,6 +10,8 @@ ENV GOPATH=/workspaces/${PROJECT}
 
 RUN go install -v github.com/go-delve/delve/cmd/dlv@latest
 
-#RUN go build
-#RUN go test ./...
+WORKDIR /workspaces/${PROJECT}/src/crucible
+
+RUN go build
+RUN go test ./...
 
